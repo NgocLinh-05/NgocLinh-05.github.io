@@ -1,0 +1,49 @@
+body {
+  margin: 0;
+  padding: 0;
+  background-color: cadetblue;
+  font-family: Arial, sans-serif;
+  color: #333;
+}
+
+/* Navigation */
+nav#topmenu ul {
+  list-style: none;
+  background-color: aliceblue;
+  text-align: center;
+  padding: 0;
+  margin: 0;
+}
+
+nav#topmenu li {
+  display: inline-block;
+  padding: 10px 20px;
+}
+
+nav#topmenu a {
+  text-decoration: none;
+  color: cadetblue;
+}
+
+/* Main content */
+main {
+  background-color: white;
+  width: 80%;
+  margin: 20px auto;
+  padding: 20px;
+  border-radius: 5px;
+}
+
+main h1 {
+  color: cadetblue;
+  margin-bottom: 5px;
+}
+
+/* Footer */
+footer {
+  background-color: aliceblue;
+  text-align: center;
+  padding: 10px 0;
+  color: cadetblue;
+  margin-top: 20px;
+}
