@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <label for="text">Enter number A:</label>
+    <input type="text" id="a"><br><br>
+    <label for="text">Enter number B:</label>
+    <input type="text" id="b"><br><br>
+    <button onclick="sum()">Calculate sum</button>
+
+    <script>
+        function sum() {
+        var a = parseFloat(document.getElementById("a").value);
+        var b = parseFloat(document.getElementById("b").value);
+
+        if(a == null || a == "" || isNaN(a)) {
+            alert("Number A is formatted incrorrect ");
+            return
+        }
+        if(b == null || b == "" || isNaN(b)) {
+            alert("Number B is formatted incrorrect ");
+            return;
+        }
+            var result = a + b;
+            alert("Result:\n" +a + "+" +b +"=" + result);
+        
+    }
+    </script>
+</body>
+</html>
