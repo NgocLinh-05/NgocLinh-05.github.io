@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+        <style>
+        /* ======= GENERAL LAYOUT ======= */
+        body {
+            font-family: 'Segoe UI', Arial, sans-serif;
+            background: linear-gradient(135deg, #74b9ff, #a29bfe);
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 0;
+        }
+
+        table {
+            background-color: #fff;
+            border-radius: 12px;
+            padding: 25px 30px;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+            border-collapse: separate;
+        }
+
+        h2 {
+            color: #2d3436;
+            margin-bottom: 15px;
+            letter-spacing: 1px;
+        }
+
+        td {
+            padding: 10px;
+        }
+
+        input[type="text"], 
+        input[type="number"], 
+        select {
+            width: 160px;
+            padding: 6px 8px;
+            font-size: 15px;
+            border: 1px solid #ccc;
+            border-radius: 6px;
+            transition: 0.3s;
+        }
+
+        input[type="text"]:focus,
+        input[type="number"]:focus,
+        select:focus {
+            outline: none;
+            border-color: #0984e3;
+            box-shadow: 0 0 6px rgba(9,132,227,0.4);
+        }
+
+        input[readonly] {
+            background-color: #f1f2f6;
+        }
+
+        input[type="button"] {
+            background: #0984e3;
+            color: white;
+            padding: 8px 16px;
+            border: none;
+            border-radius: 6px;
+            font-size: 15px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        input[type="button"]:hover {
+            background: #74b9ff;
+            color: #2d3436;
+        }
+
+        /* ======= SMALL DETAILS ======= */
+        select {
+            cursor: pointer;
+        }
+
+        td:first-child {
+            text-align: right;
+            color: #2d3436;
+            font-weight: 500;
+        }
+
+        td[colspan="2"] {
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+<form name="calcForm">
+    <table border="0" align="center">
+        <tr>
+            <td colspan="2" align="center"><h2>MINI CALCULATOR</h2></td>
+        </tr>
+        <tr>
+            <td align="right">a = </td>
+            <td><input name="txta"></td>
+        </tr>
+        <tr>
+            <td align="right">b = </td>
+            <td><input name="txtb"></td>
+        </tr>
+        <tr>
+            <td align="right">Operator: </td>
+            <td>
+                <select name="sltO">
+                    <option value="+">+</option>
+                    <option value="-">-</option>
+                    <option value="*">*</option>
+                    <option value="/">/</option>
+                    <option value="%">%</option>
+                    <option value="^">^</option>
+                </select>
+            </td>
+        </tr>
+        <tr>
+            <td align="right">Result: </td>
+            <!-- <td><label name="lblResult"></label></td>     -->
+            <td><input name="txtr" readonly></label></td>
+        </tr>
+        <tr>
+            <td colspan="2" align="center">
+                <input type="button" value="Calculate" onClick="calculate()" name="btnCal">
+            </td>
+        </tr>
+    </table>
+</form>
+<script src="/Week-9/script.js"></script>
+</body>
+</html>
