@@ -40,6 +40,6 @@ function calculate() {
     }
 
     // getElementById to display result
-    // document.getElementById("lblResult").innerText = result;
-    document.calcForm.txtr.value = result;
+    document.getElementById("lblResult").innerText = result;
+   //  document.calcForm.txtr.value = result;
 }

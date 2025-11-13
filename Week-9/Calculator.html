@@ -4,90 +4,55 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-        <style>
-        /* ======= GENERAL LAYOUT ======= */
-        body {
-            font-family: 'Segoe UI', Arial, sans-serif;
-            background: linear-gradient(135deg, #74b9ff, #a29bfe);
-            height: 100vh;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            margin: 0;
-        }
+    <style>
+    body {
+        font-family: Arial, sans-serif;
+        background-color: #e6f0fa; 
+    }
 
-        table {
-            background-color: #fff;
-            border-radius: 12px;
-            padding: 25px 30px;
-            box-shadow: 0 8px 20px rgba(0,0,0,0.2);
-            border-collapse: separate;
-        }
+    form {
+        width: 300px;
+        margin: 60px auto;
+        background: white;
+        border: 1px solid #ccc;
+        padding: 20px;
+        border-radius: 10px; 
+    }
 
-        h2 {
-            color: #2d3436;
-            margin-bottom: 15px;
-            letter-spacing: 1px;
-        }
+    h2 {
+        text-align: center;
+        margin-bottom: 15px;
+    }
 
-        td {
-            padding: 10px;
-        }
+    table {
+        width: 100%;
+    }
 
-        input[type="text"], 
-        input[type="number"], 
-        select {
-            width: 160px;
-            padding: 6px 8px;
-            font-size: 15px;
-            border: 1px solid #ccc;
-            border-radius: 6px;
-            transition: 0.3s;
-        }
+    td {
+        padding: 6px;
+    }
 
-        input[type="text"]:focus,
-        input[type="number"]:focus,
-        select:focus {
-            outline: none;
-            border-color: #0984e3;
-            box-shadow: 0 0 6px rgba(9,132,227,0.4);
-        }
+    input[type="text"], select {
+        width: 100%;
+        padding: 5px;
+        box-sizing: border-box;
+        border-radius: 5px; 
+    }
 
-        input[readonly] {
-            background-color: #f1f2f6;
-        }
+    input[type="button"] {
+        width: 100%;
+        padding: 6px;
+        background-color: #007bff;
+        color: white;
+        border: none;
+        cursor: pointer;
+        border-radius: 5px; 
+    }
 
-        input[type="button"] {
-            background: #0984e3;
-            color: white;
-            padding: 8px 16px;
-            border: none;
-            border-radius: 6px;
-            font-size: 15px;
-            cursor: pointer;
-            transition: 0.3s;
-        }
-
-        input[type="button"]:hover {
-            background: #74b9ff;
-            color: #2d3436;
-        }
-
-        /* ======= SMALL DETAILS ======= */
-        select {
-            cursor: pointer;
-        }
-
-        td:first-child {
-            text-align: right;
-            color: #2d3436;
-            font-weight: 500;
-        }
-
-        td[colspan="2"] {
-            text-align: center;
-        }
-    </style>
+    input[type="button"]:hover {
+        background-color: #0056b3;
+    }
+</style>
 </head>
 <body>
 <form name="calcForm">
@@ -118,8 +83,8 @@
         </tr>
         <tr>
             <td align="right">Result: </td>
-            <!-- <td><label name="lblResult"></label></td>     -->
-            <td><input name="txtr" readonly></label></td>
+            <td><label id="lblResult"></label></td>    
+            <!-- <td><input name="txtr" readonly></label></td> -->
         </tr>
         <tr>
             <td colspan="2" align="center">
