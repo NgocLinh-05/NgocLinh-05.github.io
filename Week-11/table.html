@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        table {
+
+            border-collapse: collapse;
+            /* % đối với trang web */
+            width: 80%;
+            /* auto để cách đều 2 bên, cách căn giữa bảng dễ nhất */
+            margin: 20px auto;
+        }
+        th, td {
+            /* solid : style of border */
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+        tr:hover {
+            background-color: #f5f5f5;
+        }
+    </style>
+</head>
+<body>
+    <h2>Bảng linh kiện máy tính &copy;</h2>
+    <table id="componentTable">
+        <!-- 4 row: tr*4 -->
+        <tr> 
+            <!-- th: title -->
+            <th>Tên linh kiện</th>
+            <th>Giá (VND)</th>
+            <th>Đánh giá &star;</th>
+        </tr>
+        <tr>
+            <!-- td: column -->
+            <td>CPU Intel&trade; Core i5</td>
+            <td>5000000</td>
+            <td>4.5/5</td>
+        </tr>
+        <tr>
+            <td>RAM DDR4 8GB</td>
+            <td>800000</td>
+            <td>4.0/5</td>
+        </tr>
+        <tr>
+            <td>Ổ cứng SSD 256GB</td>
+            <td>1200000</td>
+            <td>4.8/5</td>
+        </tr>
+    </table>
+    <button onclick="changeColor()">Đổi màu chữ</button>
+    <button onclick="sortTable()">Sắp xếp theo giá</button>
+
+    <script>
+        // đặt isRed là false nghĩa là ban đầu màu chữ không phải màu đỏ mà theo cài đặt của bảng
+        let isRed = false;
+        
+        function changeColor() {
+            const table = document.getElementById("componentTable");
+            // nếu không là red thì màu chữ là black ngược lại thì chuyển sang red
+            table.style.color = isRed ? "black" : "red";
+            // Mỗi lần bấm nút, màu sẽ đổi qua lại giữa ĐỎ và ĐEN.
+            isRed = !isRed;
+        }
+
+        function sortTable() {
+            const table = document.getElementById("componentTable");
+            // lấy tất cả dòng trong bảng trừ dòng tiêu đề; Array.from để chuyển từ HTMLCollection sang Array; slice(1) để bỏ qua dòng tiêu đề
+            const rows = Array.from(table.rows).slice(1);
+            // a và b là 2 dòng để so sánh
+            rows.sort((a, b) => {
+                // a.cells[1] là lấy ô thứ 2 (giá) của dòng a; innerText là lấy giá trị bên trong ô đó; parseInt để chuyển chuỗi sang số nguyên
+                const priceA = parseInt(a.cells[1].innerText);
+                const priceB = parseInt(b.cells[1].innerText);
+                // nếu kết quả âm thì a đứng trước b; dương thì b đứng trước a; 0 thì không đổi chỗ
+                return priceA - priceB;
+            });
+            // gắn lại các dòng đã sắp xếp vào bảng; appendChild sẽ di chuyển dòng từ vị trí cũ sang vị trí mới
+            rows.forEach(row => table.appendChild(row));
+        }
+    </script>
+</body>
+</html>

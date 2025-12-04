@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        nav {
+            background-color: black;
+            padding: 15px;
+            text-align: center;
+            /* display: none; ẩn menu đi ; block : hiển thị*/
+        }
+
+        nav a {
+            color: white;
+            /* xóa đi phần gạch chân */
+            text-decoration: none; 
+            /* trên phải dưới trái ; nếu là 2 thì mặc định là trên/dưới trái/phải*/
+            margin: 0 10px;
+        }
+
+        nav a:hover {
+            color: #4CAF50;
+            /* background-color: red; */
+        }
+    </style>
+</head>
+<body>
+     <nav id="mainNav">
+        <a href="#">Trang chủ</a> -
+        <a href="#">Sách &copy;</a> -
+        <a href="#">Tác giả &trade;</a> -
+        <a href="#">Liên hệ</a>
+    </nav>
+    <button onclick="toggleA()">Ẩn/Hiện Menu</button>
+    <script>
+        function toggleA() {
+            // truy xuất bằng cách lấy id
+            const nav = document.getElementById("mainNav");
+            // nếu display là none thì chuyển sang block còn nếu ko thì chuyển sang none
+            nav.style.display = nav.style.display === "none" ? "block" : "none";
+        }
+    </script>
+</body>
+</html>
